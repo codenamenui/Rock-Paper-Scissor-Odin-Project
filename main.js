@@ -31,3 +31,14 @@ function getComputerChoice() {
   }
 }
 
+let playerChoice = null;
+let button = document.querySelector(".buttons");
+let display;
+
+button.addEventListener('click', event => {
+  if (event.target.id != "") {
+    playerChoice = event.target.id;
+    display = playRound(playerChoice, getComputerChoice());
+    
+  }
+})
