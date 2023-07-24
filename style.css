@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: DefaultFont;
+}
+
+@font-face {
+    font-family: 'DefaultFont';
+    src: url('mangat.ttf');
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.container {
+    text-align: center;
+}
+.container * {
+    margin: 20px 0;
+}
+
+#title {
+    font-size: 5vw;
+}
+
+.button {
+    width: 15vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 1vw;
+}
+
+#buttons {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}

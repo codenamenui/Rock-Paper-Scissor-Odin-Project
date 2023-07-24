@@ -1,10 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <script src="main.js"></script>
+    <div class="container">
+        <div id="title">Rock Paper Scissors</div>
+        <div id="buttons">
+            <img src="assets/rock.png" alt="rock" id="Rock" class="button">
+            <img src="assets/paper.png" alt="paper" id="Paper" class="button">
+            <img src="assets/scissors.png" alt="scissors" id="Scissors" class="button">   
+        </div>
+        <div id="computer">Computer is thinking of its move...</div>
+        <div id="result">Waiting for a result...</div>
+        <div id="score"><p>Human : 0</p><p>Computer : 0</p></div>
+    </div>
 </body>
 </html>
