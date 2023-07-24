@@ -16,16 +16,14 @@ body {
     display: flex;
     align-items: center;
 }
-
 .container {
     text-align: center;
 }
-
 .container * {
     margin: 20px 0;
 }
 
-.title {
+#title {
     font-size: 5vw;
 }
 
@@ -38,7 +36,7 @@ body {
     border-radius: 1vw;
 }
 
-.buttons {
+#buttons {
     display: flex;
     width: 100vw;
     justify-content: center;

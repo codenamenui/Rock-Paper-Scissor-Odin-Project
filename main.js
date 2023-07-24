@@ -1,44 +1,56 @@
 function playRound(playerSelection, computerSelection) {
-  switch(playerSelection.toLowerCase()) {
+  switch(playerSelection) {
       case computerSelection:
         return 'its a draw';
         break;
-      case 'rock':
-        if (computerSelection == 'paper') return "computer won! paper beats rock";
-        else if (computerSelection == 'scissors') return "player won! rock beats scissors";
+      case 'Rock':
+        if (computerSelection == 'Paper') return "Computer won! Paper beats Rock.";
+        else if (computerSelection == 'Scissors') return "Player won! Rock beats Scissors.";
         break;
-      case 'paper':
-        if (computerSelection == 'scissors') return "computer won! scissors beats paper";
-        else if (computerSelection == 'rock') return "player won! paper beats rock";
+      case 'Paper':
+        if (computerSelection == 'Scissors') return "Computer won! Scissors beats Paper.";
+        else if (computerSelection == 'Rock') return "Player won! Paper beats Rock.";
         break;
-      case 'scissors':
-        if (computerSelection == 'rock') return "computer won! rock beats scissors";
-        else if (computerSelection == 'paper') return "player won! scissors beats paper";
+      case 'Scissors':
+        if (computerSelection == 'Rock') return "Computer won! Rock beats Scissors.";
+        else if (computerSelection == 'Paper') return "Player won! Scissors beats Paper.";
         break;
       default:
-        return 'invalid move'
+        return 'Invalid move!'
   }
 }
 
 function getComputerChoice() {
   switch (Math.floor(Math.random() * 3)) {
       case 0:
-        return 'rock';
+        return 'Rock';
       case 1:
-        return 'paper';
+        return 'Paper';
       case 2:
-        return 'scissors'
+        return 'Scissors';
   }
 }
 
 let playerChoice = null;
-let button = document.querySelector(".buttons");
-let display;
+let computerChoice = null;
+let button = document.querySelector("#buttons");
+let display = document.querySelector(".container");
+let playerScore = 0;
+let computerScore = 0;
+
+button.addEventListener('dblclick', event => {
+  event.preventDefault();
+});
 
 button.addEventListener('click', event => {
-  if (event.target.id != "") {
+  if (event.target.id != "buttons") {
     playerChoice = event.target.id;
-    display = playRound(playerChoice, getComputerChoice());
-    
+    computerChoice = getComputerChoice();
+    display.children['computer'].textContent = `Computer chose ${computerChoice}!`;
+    res = playRound(playerChoice, computerChoice);
+    res.split(" ")[0] == 'Player' ? playerScore++ : res.split(" ")[0] == 'Computer' ? computerScore++ : 0;
+    display.children['result'].textContent = res;
+    display.children['score'].firstElementChild.textContent = `Human : ${playerScore}`;
+    display.children['score'].lastElementChild.textContent = `Computer : ${computerScore}`;
   }
-})
+});
