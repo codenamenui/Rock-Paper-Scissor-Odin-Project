@@ -12,6 +12,9 @@
 
 body {
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .container {
@@ -31,6 +34,12 @@ body {
     margin-left: 2vw;
     margin-right: 2vw;
     padding: 10px;
-    border: 1px solid black;
-    border-radius: ;
+    border: 3px solid black;
+    border-radius: 1vw;
+}
+
+.buttons {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
 }
