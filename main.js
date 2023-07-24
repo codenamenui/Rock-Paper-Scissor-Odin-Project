@@ -31,32 +31,4 @@ function getComputerChoice() {
   }
 }
 
-function game() {
-  let score = 0;
-  let playerChoice = prompt("What do you want to show?\n> ");
-  let res = playRound(playerChoice, getComputerChoice());
-  score += res.split(" ")[0] == 'player' ? 1 : res.split(" ")[0] == 'computer' ? -1 : 0
-  console.log(res);
-  playerChoice = prompt("What do you want to show this time?\n> ");
-  res = playRound(playerChoice, getComputerChoice());
-  score += res.split(" ")[0] == 'player' ? 1 : res.split(" ")[0] == 'computer' ? -1 : 0
-  console.log(res);
-  playerChoice = prompt("What do you want to show this time?\n> ");
-  res = playRound(playerChoice, getComputerChoice());
-  score += res.split(" ")[0] == 'player' ? 1 : res.split(" ")[0] == 'computer' ? -1 : 0
-  console.log(res);
-  playerChoice = prompt("What do you want to show this time?\n> ");
-  res = playRound(playerChoice, getComputerChoice());
-  score += res.split(" ")[0] == 'player' ? 1 : res.split(" ")[0] == 'computer' ? -1 : 0
-  console.log(res);
-  playerChoice = prompt("What do you want to show this time?\n> ");
-  res = playRound(playerChoice, getComputerChoice());
-  score += res.split(" ")[0] == 'player' ? 1 : res.split(" ")[0] == 'computer' ? -1 : 0
-  console.log(res);
-  
-  if (score > 0) console.log('player won!');
-  else if (score < 0) console.log('computer won');
-  else console.log('its a draw'); 
-}
 
-game();
